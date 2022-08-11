@@ -1,13 +1,13 @@
 ﻿// Удалить вторую цифру трёхзначного числа
 
 Console.Clear();
-int Number = new Random().Next(100, 1000);
-int NewNumber = 0;
-int LeftNumber()
+int n = int.Parse(Console.ReadLine() ?? "0");
+if (n >= 100 && n < 1000)
 {
-    NewNumber = Number / 100 * 10 + Number % 10;
-    return NewNumber;
+    int last = n % 10;
+    int first = n / 100;
+    int result = first * 10 + last;
+    Console.WriteLine("Число с удалённой второй цифрой: " + result);
 }
-LeftNumber();
-System.Console.WriteLine();
-System.Console.WriteLine($"{Number} итог {NewNumber}");
+else
+    Console.WriteLine("Это не трёхзначное число");
